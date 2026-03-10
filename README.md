@@ -1,6 +1,6 @@
-# 🚀 NLW 2026 — Trilha Python: Visão Computacional
+# 🚀 NLW Operator — Trilha Python: Visão Computacional
 
-Bem-vindo ao repositório do projeto **NLW 2026 Visão Computacional**. Este workspace contém uma coleção de projetos e experimentos desenvolvidos durante a trilha Python de Visão Computacional da NLW 2026 da Rocketseat, focando em Deep Learning, Reconhecimento de Gestos em tempo real e técnicas avançadas de Visão Computacional.
+Bem-vindo ao repositório do projeto **NLW Operator Visão Computacional**. Este workspace contém uma coleção de projetos e experimentos desenvolvidos durante a trilha Python de Visão Computacional da NLW Operator da Rocketseat, focando em Deep Learning, Reconhecimento de Gestos em tempo real e técnicas avançadas de Visão Computacional.
 
 ---
 
@@ -64,6 +64,6 @@ Certifique-se de ter o [uv](https://github.com/astral-sh/uv) instalado. Ele é u
 
 ## 📄 Licença
 
-Este projeto foi desenvolvido para fins educacionais durante o **NLW 2026** da Rocketseat.
+Este projeto foi desenvolvido para fins educacionais durante o **NLW Operator** da Rocketseat.
 
 *Feito com ❤️ por Arthur Kamienski*
