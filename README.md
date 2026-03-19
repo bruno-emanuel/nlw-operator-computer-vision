@@ -19,7 +19,7 @@
 
 ---
 
-## Demonstração
+<!--## Demonstração
 
 <p align="center">
   <img src="assets/demo.gif" width="700" alt="Demonstração do projeto"/>
@@ -27,7 +27,7 @@
 
 **Demo ao vivo:**  
 Coloque aqui o seu link, caso tenha.
-
+-->
 ---
 
 ## Sobre o Projeto
