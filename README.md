@@ -79,5 +79,7 @@ Conclusão
 Esse projeto foi uma experiência muito boa para desenvolver habilidades práticas em IA, visão computacional e comunicação em tempo real.
 
 Ele mostra como diferentes tecnologias podem trabalhar juntas para criar uma aplicação funcional e interativa.
+```
 
 <p align="center"> <img src="https://capsule-render.vercel.app/api?type=waving&color=0:00c6ff,100:0072ff&height=120&section=footer"/> </p> ```
+
