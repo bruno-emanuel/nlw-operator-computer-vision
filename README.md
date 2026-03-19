@@ -82,5 +82,5 @@ Ele mostra como diferentes tecnologias podem trabalhar juntas para criar uma apl
 ```
 
 
-<p align="center"> <img src="https://capsule-render.vercel.app/api?type=waving&color=0:00c6ff,100:0072ff&height=120&section=footer"/> </p> ```
+<p align="center"> <img src="https://capsule-render.vercel.app/api?type=waving&color=0:00c6ff,100:0072ff&height=120&section=footer"/> </p> 
 
