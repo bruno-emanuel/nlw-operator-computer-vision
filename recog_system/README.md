@@ -1,103 +1,87 @@
-# 🖐️ Sistema de Reconhecimento & Laboratório de Visão Computacional
+Sistema de Reconhecimento e Laboratório de Visão Computacional
 
-![Versão do Python](https://img.shields.io/badge/Python-3.11+-3776AB?style=for-the-badge&logo=python&logoColor=white)
-![MediaPipe](https://img.shields.io/badge/MediaPipe-00C7B7?style=for-the-badge&logo=google&logoColor=white)
-![Scikit-Learn](https://img.shields.io/badge/Scikit--Learn-F7931E?style=for-the-badge&logo=scikit-learn&logoColor=white)
+Este projeto consiste em um sistema completo para reconhecimento de gestos em tempo real, utilizando técnicas de visão computacional e machine learning. Além disso, o repositório também inclui notebooks exploratórios voltados para diferentes aplicações na área, como classificação, detecção e segmentação de imagens.
 
-Este repositório contém um sistema completo para reconhecimento de gestos em tempo real utilizando **MediaPipe** e **Scikit-Learn**, além de uma coleção de notebooks exploratórios para diversas tarefas de Visão Computacional.
+Sobre o Projeto
 
-[⬅️ Voltar para a Raiz do Projeto](../README.md)
+O principal objetivo do projeto é implementar um pipeline completo, desde a coleta de dados até a inferência em tempo real. Diferente de soluções baseadas apenas em modelos prontos, este sistema permite a criação de um conjunto de dados próprio, possibilitando ao usuário treinar um modelo personalizado para reconhecer gestos específicos.
 
----
+Essa abordagem torna o sistema mais flexível e aplicável a diferentes contextos.
 
-## 🚀 Sobre o Projeto
+Tecnologias Utilizadas
 
-O coração deste projeto é um pipeline de ponta a ponta que permite coletar dados das mãos, treinar um classificador customizado e realizar inferência em tempo real via webcam. Ao contrário de modelos pré-treinados estáticos, este sistema permite que os usuários criem seus próprios gestos e treinem o modelo para reconhecê-los com alta precisão.
+O projeto foi desenvolvido utilizando as seguintes ferramentas:
 
----
+Python como linguagem principal
 
-## 🛠️ Construído Com
+OpenCV para captura e processamento de imagens
 
-- **Python**: Linguagem principal.
-- **OpenCV**: Captura e processamento de vídeo.
-- **MediaPipe**: Extração robusta de marcos (landmarks) das mãos.
-- **Scikit-Learn**: Treinamento de modelos de Machine Learning (Random Forest).
-- **Pandas/NumPy**: Manipulação e processamento de dados.
-- **uv**: Gerenciamento de dependências e ambiente.
+MediaPipe para extração dos pontos da mão (landmarks)
 
----
+Scikit-Learn para treinamento do modelo de classificação
 
-## 📽️ Pipeline de Reconhecimento de Gestos
+Pandas e NumPy para manipulação de dados
 
-O fluxo de trabalho está dividido em três etapas principais:
+uv para gerenciamento de dependências
 
-### 1. Coleta de Dados (`collect_landmarks.py`)
-Use este script para criar seu dataset customizado. Ele captura as coordenadas (x, y, z) dos 21 marcos da mão.
-- **Uso:** `python collect_landmarks.py --label seu_gesto`
-- **Comandos:** 
-  - `s`: Salva um único frame de marcos.
-  - `r`: Inicia/Para gravação contínua.
-  - `q`: Sai do programa.
+Funcionamento do Pipeline
 
-### 2. Treinamento do Modelo (`train_model.py`)
-Processa o arquivo `hand_landmarks_data.csv` gerado e treina um classificador `RandomForest`.
-- **Saída:** Gera `gesture_model.joblib` e `label_encoder.joblib`.
-- Avalia o modelo com relatórios de precisão, recall e F1-score.
+O sistema é dividido em três etapas principais:
 
-### 3. Reconhecimento em Tempo Real (`webcam_recog.py`)
-O script final que utiliza a webcam para detectar mãos e classificar gestos em tempo real usando o modelo treinado.
+1. Coleta de Dados
 
----
+Nesta etapa, é utilizado o script collect_landmarks.py, que permite capturar os pontos da mão em tempo real. Esses dados são armazenados e utilizados posteriormente no treinamento do modelo.
 
-## 📓 Notebooks Exploratórios
+Durante a execução:
 
-Além do sistema de gestos, o repositório inclui implementações de ponta para outras subáreas da Visão Computacional:
+A tecla “s” salva um único frame
 
-- **`classifier_timm.ipynb`**: Classificação de imagens usando a biblioteca `timm` (MobileNetV3).
-- **`detection_yolos.ipynb`**: Detecção de objetos utilizando o modelo YOLO-S do Hugging Face.
-- **`segmentation_clipseg.ipynb`**: Segmentação de imagem baseada em texto com CLIPSeg.
-- **`gemini_vision.ipynb`**: Integração com a API do Google Gemini para análise multimodal de imagens.
+A tecla “r” inicia ou interrompe a gravação contínua
 
----
+A tecla “q” encerra o programa
 
-## ⚙️ Instalação & Configuração
+2. Treinamento do Modelo
 
-### 1. Pré-requisitos
-Este projeto utiliza o [uv](https://github.com/astral-sh/uv) para gerenciamento de pacotes.
+O script train_model.py processa os dados coletados e treina um modelo de classificação utilizando o algoritmo Random Forest.
 
-### 2. Instalação
-Navegue até a pasta e sincronize as dependências:
-1. Clone o repositório.
-2. Sincronize as dependências:
-   ```bash
-   cd recog_system
-   uv sync
-   ```
+Como resultado, são gerados arquivos que armazenam o modelo treinado e os rótulos dos gestos. Além disso, são exibidas métricas de desempenho, como precisão, recall e F1-score, permitindo avaliar a qualidade do modelo.
 
-### 3. Download dos Modelos
-Para garantir que o sistema funcione, baixe os modelos pré-treinados do MediaPipe e coloque-os na raiz do projeto:
+3. Reconhecimento em Tempo Real
 
-- **[gesture_recognizer.task](https://storage.googleapis.com/mediapipe-models/gesture_recognizer/gesture_recognizer/float16/1/gesture_recognizer.task)**: Essencial para extração de marcos das mãos.
-- **[efficientdet_lite0.tflite](https://storage.googleapis.com/mediapipe-models/object_detector/efficientdet_lite0/float16/1/efficientdet_lite0.tflite)**: Usado para detecção de objetos em notebooks auxiliares.
+Na etapa final, o script webcam_recog.py utiliza a webcam para capturar imagens em tempo real. O sistema detecta a mão, extrai os pontos e realiza a classificação do gesto com base no modelo previamente treinado.
 
----
+O resultado é exibido diretamente na tela, permitindo uma interação dinâmica com o sistema.
 
-## 📂 Estrutura do Projeto
+Notebooks Exploratórios
 
-```text
-recog_system/
-├── collect_landmarks.py    # Ferramenta de criação de dataset
-├── train_model.py          # Script de treinamento de ML
-├── webcam_recog.py         # Script de inferência em tempo real
-├── classifier_timm.ipynb   # Exploração MobileNetV3
-├── detection_yolos.ipynb   # Exploração YOLO-S
-├── segmentation_clipseg.ipynb # Exploração CLIPSeg
-├── gemini_vision.ipynb      # Exploração Google Gemini
-├── pyproject.toml          # Metadados e dependências
-└── README.md               # Você está aqui!
-```
+O projeto também inclui notebooks que exploram outras aplicações de visão computacional:
 
----
+Classificação de imagens utilizando modelos da biblioteca timm
 
-*Feito com ❤️ durante a NLW @ Rocketseat*
+Detecção de objetos com o modelo YOLO-S
 
+Segmentação de imagens com CLIPSeg
+
+Análise multimodal utilizando a API do Google Gemini
+
+Esses materiais complementam o projeto, ampliando a compreensão sobre diferentes técnicas da área.
+
+Instalação e Execução
+
+Para utilizar o sistema, é necessário:
+
+Acessar a pasta do projeto:
+
+cd recog_system
+
+Instalar as dependências:
+
+uv sync
+
+Baixar os modelos necessários e colocá-los na raiz do projeto
+
+Executar os scripts conforme a etapa desejada (coleta, treinamento ou reconhecimento)
+
+Considerações Finais
+
+Este projeto permite compreender, de forma prática, como funciona um sistema de visão computacional aplicado ao reconhecimento de gestos. Além disso, evidencia a importância da coleta de dados, do treinamento de modelos e da integração entre diferentes tecnologias para construção de soluções baseadas em inteligência artificial.
